@@ -1,0 +1,52 @@
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+    color: #454d55;
+    font-size: 60px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    text-shadow: 3px 3px 5px #95999c;
+    font-family: "Staatliches", cursive;
+}
+
+.routine-container {
+    margin: auto;
+    max-width: 80%;
+    display: none;
+}
+
+table {
+    text-align: center;
+}
+
+.landing {
+    max-width: 60%;
+    margin: auto;
+}
+
+.course-input {
+    max-width: 60%;
+    margin: auto;
+}
+
+.submit {
+    margin-top: 20px;
+}
+
+#add-course-btn {
+    margin-right: 20px;
+}
+
+.submit-btn-grp {
+    padding-top: 10px;
+    border-top: 1px solid #868686;
+}
+
+@media print {
+    .submit {
+        display: none;
+    }
+}

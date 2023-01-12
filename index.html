@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>NSU Routine Maker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <h1>NSU Routine Maker</h1>
+
+    <div class="landing">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Course Code</th>
+                    <th scope="col">Day(s)</th>
+                    <th scope="col">Start Time</th>
+                    <th scope="col">End Time</th>
+                </tr>
+            </thead>
+            <tbody id="input-table">
+                <tr class="input-row">
+                    <td>
+                        <input class="form-control course-input0" type="text" placeholder="Course Code">
+                    </td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle day-input0" type="button"
+                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Select Day(s)</button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item day" href="#">ST</a>
+                                <a class="dropdown-item day" href="#">MW</a>
+                                <a class="dropdown-item day" href="#">RA</a>
+                                <a class="dropdown-item day" href="#">S</a>
+                                <a class="dropdown-item day" href="#">M</a>
+                                <a class="dropdown-item day" href="#">T</a>
+                                <a class="dropdown-item day" href="#">W</a>
+                                <a class="dropdown-item day" href="#">R</a>
+                                <a class="dropdown-item day" href="#">A</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle start-input0" type="button"
+                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Select Start Time</button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item start" href="#">8:00AM</a>
+                                <a class="dropdown-item start" href="#">9:40AM</a>
+                                <a class="dropdown-item start" href="#">11:20AM</a>
+                                <a class="dropdown-item start" href="#">1:00PM</a>
+                                <a class="dropdown-item start" href="#">2:40PM</a>
+                                <a class="dropdown-item start" href="#">4:20PM</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle end-input0" type="button"
+                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Select End Time</button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item end" href="#">9:30AM</a>
+                                <a class="dropdown-item end" href="#">11:10AM</a>
+                                <a class="dropdown-item end" href="#">12:50PM</a>
+                                <a class="dropdown-item end" href="#">2:30PM</a>
+                                <a class="dropdown-item end" href="#">4:10PM</a>
+                                <a class="dropdown-item end" href="#">5:50PM</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="submit d-flex justify-content-end">
+            <div class="submit-btn-grp">
+                <button type="button" class="btn btn-secondary" id="add-course-btn">Add a course</button>
+                <button type="button" class="btn btn-dark" id="generate-btn">Generate routine</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="routine-container">
+        <table id="print-area" class="table table-striped table-dark table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">8:00-9:30</th>
+                    <th scope="col">9:40-11:10</th>
+                    <th scope="col">11:20-12:50</th>
+                    <th scope="col">1:00-2:30</th>
+                    <th scope="col">2:40-4:10</th>
+                    <th scope="col">4:20-5:50</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Saturday</th>
+                    <td id="A8"></td>
+                    <td id="A9"></td>
+                    <td id="A11"></td>
+                    <td id="A1"></td>
+                    <td id="A2"></td>
+                    <td id="A4"></td>
+                </tr>
+                <tr>
+                    <th scope="row">Sunday</th>
+                    <td id="S8"></td>
+                    <td id="S9"></td>
+                    <td id="S11"></td>
+                    <td id="S1"></td>
+                    <td id="S2"></td>
+                    <td id="S4"></td>
+                </tr>
+                <tr>
+                    <th scope="row">Monday</th>
+                    <td id="M8"></td>
+                    <td id="M9"></td>
+                    <td id="M11"></td>
+                    <td id="M1"></td>
+                    <td id="M2"></td>
+                    <td id="M4"></td>
+                </tr>
+                <tr>
+                    <th scope="row">Tuesday</th>
+                    <td id="T8"></td>
+                    <td id="T9"></td>
+                    <td id="T11"></td>
+                    <td id="T1"></td>
+                    <td id="T2"></td>
+                    <td id="T4"></td>
+                </tr>
+                <tr>
+                    <th scope="row">Wednesday</th>
+                    <td id="W8"></td>
+                    <td id="W9"></td>
+                    <td id="W11"></td>
+                    <td id="W1"></td>
+                    <td id="W2"></td>
+                    <td id="W4"></td>
+                </tr>
+                <tr>
+                    <th scope="row">Thursday</th>
+                    <td id="R8"></td>
+                    <td id="R9"></td>
+                    <td id="R11"></td>
+                    <td id="R1"></td>
+                    <td id="R2"></td>
+                    <td id="R4"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="submit">
+            <div class="submit-btn-grp d-flex justify-content-between">
+                <div>
+                    <button type="button" class="btn btn-light" id="theme-switch">Light mode</button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-secondary" id="go-back-btn">Go back</button>
+                    <button type="button" class="btn btn-dark" id="print-btn">Print routine</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
